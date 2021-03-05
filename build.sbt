@@ -45,7 +45,7 @@ scalacOptions in (Compile, doc) ++= Seq(
 /**************************
 	* Spark package settings
 	*/
-sparkVersion := sys.props.getOrElse("spark.version", "2.4.3")
+sparkVersion := sys.props.getOrElse("spark.version", "2.4.0")
 
 spIncludeMaven := true
 
@@ -70,19 +70,19 @@ libraryDependencies ++= Seq(
 	"org.apache.spark" %% "spark-catalyst" % sparkVersion.value % "provided" excludeAll(
 		ExclusionRule("org.apache", "hadoop-common"),
 		ExclusionRule("org.apache", "hadoop-hdfs")),
-	"org.apache.hadoop" % "hadoop-common" % "2.8.1" % "provided",
-	"org.apache.hadoop" % "hadoop-hdfs" % "2.8.1" % "provided",
+	"org.apache.hadoop" % "hadoop-common" % "2.6.0" % "provided",
+	"org.apache.hadoop" % "hadoop-hdfs" % "2.6.0" % "provided",
 	"org.apache.commons" % "commons-lang3" % "3.3.5" % "provided",
 	// antlr-runtime
-	"org.antlr" % "antlr4-runtime" % "4.7.2" % "provided"
+	"org.antlr" % "antlr4-runtime" % "4.7" % "provided"
 )
 
 lazy val scalatest = "org.scalatest" %% "scalatest" % "3.0.5"
 
 // Dependencies for Test
 libraryDependencies ++= Seq(
-	"org.apache.hadoop" % "hadoop-common" % "2.8.1" % "provided",
-	"org.apache.hadoop" % "hadoop-hdfs" % "2.8.1" % "provided",
+	"org.apache.hadoop" % "hadoop-common" % "2.6.0" % "provided",
+	"org.apache.hadoop" % "hadoop-hdfs" % "2.6.0" % "provided",
 	"org.apache.commons" % "commons-lang3" % "3.3.5" % "provided",
 	// Dependencies for tests
 	//
